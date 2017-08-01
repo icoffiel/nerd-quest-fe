@@ -5,7 +5,7 @@ import ItemListing from '../components/item-listing/ItemListing';
 function getStores() {
     return [
         ItemStore,
-    ]
+    ];
 }
 
 function getState() {

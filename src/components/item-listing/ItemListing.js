@@ -1,41 +1,20 @@
 import React from 'react';
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 function ItemListing(props) {
-
     return (
         <ItemTable items={props.items}/>
     )
 }
 
-function ItemRow(props) {
-    const item = props.value;
-
-    return (
-        <tr>
-            <td>{item.name}</td>
-            <td>{item.rarity}</td>
-        </tr>
-    );
-}
-
 function ItemTable(props) {
     const items = props.items;
     return (
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Rarity</th>
-            </tr>
-            </thead>
-            <tbody>
-            {items.map(item => (
-                <ItemRow
-                    value={item}
-                />
-            ))}
-            </tbody>
-        </table>
+        <BootstrapTable data={items} condensed>
+            <TableHeaderColumn isKey dataField='Name' dataSort={true}>Name</TableHeaderColumn>
+            <TableHeaderColumn dataField='Description'>Description</TableHeaderColumn>
+            <TableHeaderColumn dataField='Rarity' dataSort={true}>Rarity</TableHeaderColumn>
+        </BootstrapTable>
     )
 }
 

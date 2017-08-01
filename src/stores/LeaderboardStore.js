@@ -2,7 +2,7 @@ import {ReduceStore} from 'flux/utils';
 import Dispatcher from '../components/dispatcher/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
 
-class ItemStore extends ReduceStore {
+class LeaderboardStore extends ReduceStore {
     constructor() {
         super(Dispatcher);
     }
@@ -13,12 +13,13 @@ class ItemStore extends ReduceStore {
 
     reduce(state, action) {
         switch (action.type) {
-            case ActionTypes.ITEM_RECEIVE_ITEMS:
-                return action.items;
+            case ActionTypes.LEADERBOARD_RECEIVE_LEADERS:
+                console.log('Store receiving leaders');
+                return action.leaders;
             default:
                 return state;
         }
     }
 }
 
-export default new ItemStore();
+export default new LeaderboardStore();
