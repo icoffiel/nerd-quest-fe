@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
-import ItemsStore from '../../stores/ItemStore';
+import React from 'react';
 
-class ItemListing extends Component {
+function ItemListing(props) {
 
-    componentDidMount() {
-        this.items = ItemsStore.getState();
-  }
-
-  render() {
     return (
-      <ItemTable items={this.items} />
+        <ItemTable items={props.items}/>
     )
-  }
 }
 
 function ItemRow(props) {
@@ -30,17 +23,17 @@ function ItemTable(props) {
     return (
         <table>
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Rarity</th>
-                </tr>
+            <tr>
+                <th>Name</th>
+                <th>Rarity</th>
+            </tr>
             </thead>
             <tbody>
-                {items.map(item => (
-                    <ItemRow
-                        value={item}
-                    />
-                ))}
+            {items.map(item => (
+                <ItemRow
+                    value={item}
+                />
+            ))}
             </tbody>
         </table>
     )

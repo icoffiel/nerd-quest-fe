@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ItemListing from '../item-listing/ItemListing';
+import ItemListingContainer from '../../containers/ItemListingContainer';
 import './App.css';
 
 class App extends Component {
 
   render() {
     return (
-      <ItemListing />
+      <ItemListingContainer />
     );
   }
 }

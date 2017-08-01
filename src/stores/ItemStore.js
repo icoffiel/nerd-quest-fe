@@ -1,7 +1,11 @@
-import { ReduceStore } from 'flux/utils';
-import Immutable from 'immutable';
+import {ReduceStore} from 'flux/utils';
+import Dispatcher from '../components/dispatcher/Dispatcher';
 
 class ItemStore extends ReduceStore {
+    constructor() {
+        super(Dispatcher);
+    }
+
     getInitialState() {
         return [];
     }
@@ -14,4 +18,4 @@ class ItemStore extends ReduceStore {
     }
 }
 
-export default ItemStore;
+export default new ItemStore();
