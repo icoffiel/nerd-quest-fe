@@ -9,11 +9,17 @@ function ItemListing(props) {
 
 function ItemTable(props) {
     const items = props.items;
+    const options = {
+        defaultSortName: 'Rarity',
+        defaultSortOrder: 'desc',
+        sizePerPage: 25,
+    }
     return (
-        <BootstrapTable data={items} condensed>
-            <TableHeaderColumn isKey dataField='Name' dataSort={true}>Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='Description'>Description</TableHeaderColumn>
-            <TableHeaderColumn dataField='Rarity' dataSort={true}>Rarity</TableHeaderColumn>
+        <BootstrapTable data={items} options={options} bordered={false} condensed  pagination search>
+            <TableHeaderColumn isKey dataField='key' hidden searchable={false}>Key</TableHeaderColumn>
+            <TableHeaderColumn dataField='Name' dataSort={true} width='200'>Name</TableHeaderColumn>
+            <TableHeaderColumn dataField='Description' searchable={false}>Description</TableHeaderColumn>
+            <TableHeaderColumn dataField='Rarity' dataSort={true} searchable={false} width='70'>Rarity</TableHeaderColumn>
         </BootstrapTable>
     )
 }

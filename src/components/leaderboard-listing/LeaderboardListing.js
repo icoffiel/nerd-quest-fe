@@ -17,8 +17,8 @@ function LeaderboardTable(props) {
                     <th>Avatar</th>
                     <th>Points</th>
                     <th>Title</th>
-                    <th>Effects</th>
-                    <th>Badges</th>
+                    {/*<th>Effects</th>*/}
+                    {/*<th>Badges</th>*/}
                 </tr>
             </thead>
             <tbody>
@@ -41,7 +41,7 @@ function LeaderboardRow(props) {
             <td><img height="50" width="50" src={leader.AvatarUrl} /></td>
             <td>{leader.Points}</td>
             <td>{leader.Title}</td>
-            <td>{leader.Effects}</td>
+            {/*<td>{leader.Effects}</td>*/}
             {/*<td>{leader.Badges}</td>*/}
         </tr>
     )

@@ -4,6 +4,7 @@ import LeaderboardListingContainer from '../../containers/LeaderboardListingCont
 import './App.css';
 import ItemActions from '../../actions/ItemActions';
 import LeaderboardActions from "../../actions/LeaderboardActions";
+import {Col, Grid, Nav, Navbar, NavItem, Row} from "react-bootstrap";
 
 class App extends Component {
 
@@ -15,8 +16,30 @@ class App extends Component {
   render() {
     return (
         <div>
-            <LeaderboardListingContainer />
-            <ItemListingContainer />
+            <Navbar inverse>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <a href="#">Nerd Quest</a>
+                    </Navbar.Brand>
+                </Navbar.Header>
+                <Nav>
+                </Nav>
+            </Navbar>
+            <Grid>
+                <Row>
+                    <Col md={12}>
+
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md={4}>
+                        <LeaderboardListingContainer />
+                    </Col>
+                    <Col md={8}>
+                        <ItemListingContainer />
+                    </Col>
+                </Row>
+            </Grid>
         </div>
     );
   }
