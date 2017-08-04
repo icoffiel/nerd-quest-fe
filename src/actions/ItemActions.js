@@ -16,6 +16,14 @@ const ItemActions = {
                 Dispatcher.dispatch({ type: ActionTypes.ITEM_RECEIVE_ITEMS, items: data });
             });
     },
+
+    selectItem(state) {
+        console.log('select item', state);
+        Dispatcher.dispatch({
+            type: ActionTypes.ITEM_SELECT_ITEM,
+            state: state,
+        })
+    }
 };
 
 function parseJson(response) {

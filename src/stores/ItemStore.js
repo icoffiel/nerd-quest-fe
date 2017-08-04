@@ -15,6 +15,8 @@ class ItemStore extends ReduceStore {
         switch (action.type) {
             case ActionTypes.ITEM_RECEIVE_ITEMS:
                 return action.items;
+            case ActionTypes.USE_ITEM_RESPONSE:
+                return state.filter(item => item.key !== action.itemKey);
             default:
                 return state;
         }

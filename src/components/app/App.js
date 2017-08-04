@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import './App.css';
+
 import ItemListingContainer from '../../containers/ItemListingContainer';
 import LeaderboardListingContainer from '../../containers/LeaderboardListingContainer';
-import './App.css';
+
 import ItemActions from '../../actions/ItemActions';
 import LeaderboardActions from "../../actions/LeaderboardActions";
-import {Col, Grid, Nav, Navbar, NavItem, Row} from "react-bootstrap";
+
+import {Col, Grid, Nav, Navbar, Row} from "react-bootstrap";
+import UseItemContainer from "../../containers/UseItemContainer";
 
 class App extends Component {
 
@@ -28,7 +32,7 @@ class App extends Component {
             <Grid>
                 <Row>
                     <Col md={12}>
-
+                        <UseItemContainer />
                     </Col>
                 </Row>
                 <Row>

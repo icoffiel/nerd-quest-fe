@@ -1,5 +1,6 @@
 import React from 'react';
-import {Table} from "react-bootstrap";
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import LeaderboardActions from '../../actions/LeaderboardActions';
 
 function LeaderboardListing(props) {
     return (
@@ -9,42 +10,27 @@ function LeaderboardListing(props) {
 
 function LeaderboardTable(props) {
     const leaders = props.leaders;
+    console.log('Leaders', leaders)
+
+    const selectRowOptions = {
+        mode: 'radio',
+        clickToSelect: true,
+        hideSelectColumn: true,
+        bgColor: 'AliceBlue',
+        onSelect: onRowSelect,
+    };
+
     return (
-        <Table condensed>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Avatar</th>
-                    <th>Points</th>
-                    <th>Title</th>
-                    {/*<th>Effects</th>*/}
-                    {/*<th>Badges</th>*/}
-                </tr>
-            </thead>
-            <tbody>
-                {leaders.map(leader => (
-                    <LeaderboardRow
-                        key={leader.PlayerName}
-                        value={leader}
-                    />
-                ))}
-            </tbody>
-        </Table>
+        <BootstrapTable data={leaders} selectRow={selectRowOptions} bordered={false} condensed>
+            <TableHeaderColumn isKey dataField='PlayerName'>Name</TableHeaderColumn>
+            <TableHeaderColumn dataField='Points'>Points</TableHeaderColumn>
+            <TableHeaderColumn dataField='Title'>Title</TableHeaderColumn>
+        </BootstrapTable>
     );
 }
 
-function LeaderboardRow(props) {
-    const leader = props.value;
-    return (
-        <tr>
-            <td>{leader.PlayerName}</td>
-            <td><img height="50" width="50" src={leader.AvatarUrl} /></td>
-            <td>{leader.Points}</td>
-            <td>{leader.Title}</td>
-            {/*<td>{leader.Effects}</td>*/}
-            {/*<td>{leader.Badges}</td>*/}
-        </tr>
-    )
+function onRowSelect(row, isSelected) {
+    LeaderboardActions.selectLeader({isSelected: isSelected, row: row});
 }
 
 export default LeaderboardListing;

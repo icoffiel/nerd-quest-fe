@@ -15,6 +15,14 @@ const LeaderboardActions = {
                 Dispatcher.dispatch({ type: ActionTypes.LEADERBOARD_RECEIVE_LEADERS, leaders: data });
             });
     },
+
+    selectLeader(state) {
+        console.log('select leader', state);
+        Dispatcher.dispatch({
+            type: ActionTypes.LEADERBOARD_SELECT_LEADER,
+            state: state,
+        });
+    },
 };
 
 function parseJson(response) {
