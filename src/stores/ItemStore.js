@@ -1,10 +1,12 @@
 import {ReduceStore} from 'flux/utils';
 import Dispatcher from '../components/dispatcher/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
+import ItemActions from "../actions/ItemActions";
 
 class ItemStore extends ReduceStore {
     constructor() {
         super(Dispatcher);
+        poller();
     }
 
     getInitialState() {
@@ -21,6 +23,13 @@ class ItemStore extends ReduceStore {
                 return state;
         }
     }
+}
+
+function poller() {
+    setTimeout(() => {
+        ItemActions.fetchItems();
+        poller();
+    }, 20000);
 }
 
 export default new ItemStore();
