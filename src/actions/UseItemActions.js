@@ -4,7 +4,6 @@ import 'whatwg-fetch';
 
 const UseItemActions = {
     useItem(itemKey, target) {
-        console.log('fetchItems');
         Dispatcher.dispatch({
             type: ActionTypes.USE_ITEM_USE
         });
@@ -14,7 +13,6 @@ const UseItemActions = {
         })
             .then(parseJson)
             .then(data => {
-                console.log('request succeeded', data);
                 Dispatcher.dispatch({
                     type: ActionTypes.USE_ITEM_RESPONSE,
                     message: data,

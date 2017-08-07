@@ -14,7 +14,6 @@ class LeaderboardStore extends ReduceStore {
     reduce(state, action) {
         switch (action.type) {
             case ActionTypes.LEADERBOARD_RECEIVE_LEADERS:
-                console.log('Store receiving leaders');
                 return action.leaders;
             default:
                 return state;

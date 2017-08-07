@@ -35,8 +35,6 @@ function ItemTable(props) {
 }
 
 function onRowSelect(row, isSelected) {
-    console.log('isSelected', isSelected);
-    console.log('row', row);
     ItemActions.selectItem({iSelected: isSelected, row: row});
 }
 

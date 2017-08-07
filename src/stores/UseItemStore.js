@@ -27,7 +27,6 @@ class UseItemStore extends ReduceStore {
     reduce(state, action) {
         switch (action.type) {
             case ActionTypes.ITEM_SELECT_ITEM:
-                console.log('Selected Item', action);
                 return {
                     item: action.state,
                 };

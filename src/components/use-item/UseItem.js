@@ -4,8 +4,6 @@ import UseItemActions from '../../actions/UseItemActions';
 import './UseItem.css';
 
 function UseItem(props) {
-    console.log('props received:', props);
-
     const itemObj = props.item;
     const itemSelected = itemObj.iSelected;
     const item = itemObj.row;

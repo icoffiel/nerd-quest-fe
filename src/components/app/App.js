@@ -7,8 +7,9 @@ import LeaderboardListingContainer from '../../containers/LeaderboardListingCont
 import ItemActions from '../../actions/ItemActions';
 import LeaderboardActions from "../../actions/LeaderboardActions";
 
-import {Col, Grid, Nav, Navbar, Row} from "react-bootstrap";
+import {Col, Grid, Navbar, Row} from "react-bootstrap";
 import UseItemContainer from "../../containers/UseItemContainer";
+import NavInfoContainer from "../../containers/NavInfoContainer";
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
         LeaderboardActions.fetchLeaderboard();
     }
 
-  render() {
+    render() {
     return (
         <div>
             <Navbar inverse>
@@ -26,8 +27,7 @@ class App extends Component {
                         <a href="#">Nerd Quest</a>
                     </Navbar.Brand>
                 </Navbar.Header>
-                <Nav>
-                </Nav>
+                <NavInfoContainer />
             </Navbar>
             <Grid>
                 <Row>
@@ -46,7 +46,7 @@ class App extends Component {
             </Grid>
         </div>
     );
-  }
+    }
 }
 
 export default App;

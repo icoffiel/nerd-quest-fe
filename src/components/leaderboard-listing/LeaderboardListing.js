@@ -10,8 +10,6 @@ function LeaderboardListing(props) {
 
 function LeaderboardTable(props) {
     const leaders = props.leaders;
-    console.log('Leaders', leaders)
-
     const selectRowOptions = {
         mode: 'radio',
         clickToSelect: true,
